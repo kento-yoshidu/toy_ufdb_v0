@@ -20,7 +20,7 @@ enum Commands {
     Groups,
     Createdb { db_name: String },
     Use { db_name: String },
-    UNMERGE { key_a: String, key_b: String },
+    Unmerge { key_a: String, key_b: String },
     SEED,
     Exit,
 }
@@ -97,7 +97,7 @@ fn main() {
                             }
                         }
                     }
-                    Commands::UNMERGE { key_a, key_b } => {
+                    Commands::Unmerge { key_a, key_b } => {
                         db.current().unmerge(&key_a, &key_b);
                     }
                     Commands::SEED => {

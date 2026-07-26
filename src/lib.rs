@@ -1,4 +1,4 @@
-use std::{collections::HashMap, print, println};
+use std::collections::HashMap;
 
 mod union_find;
 mod graph;
@@ -213,5 +213,21 @@ mod tests {
 
         assert_eq!(ufdb.size("a"), Some(2));
         assert_eq!(ufdb.size("b"), Some(2));
+    }
+
+    #[test]
+    fn unmerge_splits_group_by_removing_edge() {
+        let mut ufdb = Ufdb::new();
+
+        ufdb.unite("a", "b");
+        ufdb.unite("b", "c");
+
+        assert!(ufdb.same("a", "c"));
+
+        ufdb.unmerge("b", "c");
+
+        assert!(ufdb.same("a", "b"));
+        assert!(!ufdb.same("b", "c"));
+        assert!(!ufdb.same("a", "c"));
     }
 }
