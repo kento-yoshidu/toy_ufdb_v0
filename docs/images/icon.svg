@@ -14,21 +14,29 @@
       <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.55"/>
       <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
     </linearGradient>
+    <mask id="hull-hole">
+      <!-- white = visible hull, black = cut away (hole) -->
+      <ellipse cx="64" cy="50" rx="42" ry="13" fill="#ffffff"/>
+      <ellipse cx="64" cy="53" rx="15" ry="4.5" fill="#000000"/>
+    </mask>
   </defs>
 
   <!-- tractor beam -->
   <polygon points="64,54 34,116 94,116" fill="url(#beam)"/>
 
-  <!-- hull -->
-  <ellipse cx="64" cy="50" rx="42" ry="13" fill="url(#hull)" stroke="#334155" stroke-width="1.5"/>
-  <!-- cockpit dome -->
+  <!-- cockpit dome (drawn first so the hull overlaps its lower half) -->
   <ellipse cx="64" cy="38" rx="19" ry="15" fill="url(#dome)" stroke="#075985" stroke-width="1.5"/>
-  <!-- hull underside seam -->
-  <path d="M22,50 Q64,66 106,50" fill="none" stroke="#1e293b" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- light source, sitting behind the hull so it only shows through the hole cut into it -->
+  <ellipse cx="64" cy="53" rx="15" ry="4.5" fill="#38bdf8"/>
+
+  <!-- hull, masked so an oval hole reveals the light source above -->
+  <ellipse cx="64" cy="50" rx="42" ry="13" fill="url(#hull)" mask="url(#hull-hole)"/>
+  <ellipse cx="64" cy="50" rx="42" ry="13" fill="none" stroke="#334155" stroke-width="1.5"/>
+  <ellipse cx="64" cy="53" rx="15" ry="4.5" fill="none" stroke="#0369a1" stroke-width="1.5"/>
 
   <!-- port lights -->
   <circle cx="44" cy="52" r="2.6" fill="#38bdf8"/>
-  <circle cx="64" cy="55" r="2.6" fill="#38bdf8"/>
   <circle cx="84" cy="52" r="2.6" fill="#38bdf8"/>
 
   <!-- union-find: two children merging into one root, inside the beam -->

@@ -1,16 +1,16 @@
-# UFO
-
 <p align="center">
-  <img src="./docs/images/icon.svg" width="160" alt="UFO icon">
+  <img src="./docs/images/icon.png" width="90" alt="UFO icon" align="middle">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./docs/images/wordmark-dark.svg">
+    <img src="./docs/images/wordmark.svg" alt="UFO - Union Find { Object | Organizer | etc... }" width="480" align="middle">
+  </picture>
 </p>
 
-## <b>U</b>nion <b>F</b>ind { <b>O</b>bject | <b>O</b>rganizer | <b>O</b>rigin }
+### UFO
 
 Union-Findをコアロジックにしたデータベースを自作している。
 
-正式名称は **UFO**にする予定。
-
-専用の<a href="https://github.com/kento-yoshidu/toy_ufdb_gui_app" target="_blink">GUIアプリ</a>も開発している
+[ロードマップ](docs/ROADMAP.md) ・ [アーキテクチャ](docs/architecture.md) ・ [Union-Find概論](docs/union-find.md) ・ [GUIアプリ (UFO Studio)](https://github.com/kento-yoshidu/toy_ufdb_gui_app)
 
 ## バージョンについて
 
