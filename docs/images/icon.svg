@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="hull" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e2e8f0"/>
+      <stop offset="45%" stop-color="#94a3b8"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <radialGradient id="dome" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#f0f9ff"/>
+      <stop offset="55%" stop-color="#7dd3fc"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </radialGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- tractor beam -->
+  <polygon points="64,54 34,116 94,116" fill="url(#beam)"/>
+
+  <!-- hull -->
+  <ellipse cx="64" cy="50" rx="42" ry="13" fill="url(#hull)" stroke="#334155" stroke-width="1.5"/>
+  <!-- cockpit dome -->
+  <ellipse cx="64" cy="38" rx="19" ry="15" fill="url(#dome)" stroke="#075985" stroke-width="1.5"/>
+  <!-- hull underside seam -->
+  <path d="M22,50 Q64,66 106,50" fill="none" stroke="#1e293b" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- port lights -->
+  <circle cx="44" cy="52" r="2.6" fill="#38bdf8"/>
+  <circle cx="64" cy="55" r="2.6" fill="#38bdf8"/>
+  <circle cx="84" cy="52" r="2.6" fill="#38bdf8"/>
+
+  <!-- union-find: two children merging into one root, inside the beam -->
+  <line x1="48" y1="90" x2="64" y2="104" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+  <line x1="80" y1="90" x2="64" y2="104" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="48" cy="90" r="6" fill="#0c2a43" stroke="#38bdf8" stroke-width="2.5"/>
+  <circle cx="80" cy="90" r="6" fill="#0c2a43" stroke="#38bdf8" stroke-width="2.5"/>
+  <circle cx="64" cy="104" r="7.5" fill="#38bdf8" stroke="#0c2a43" stroke-width="2"/>
+</svg>
