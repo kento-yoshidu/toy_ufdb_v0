@@ -1,6 +1,16 @@
-# toy_ufdb
+# UFO
+
+<p align="center">
+  <img src="./docs/images/icon.svg" width="160" alt="UFO icon">
+</p>
+
+## <b>U</b>nion <b>F</b>ind { <b>O</b>bject | <b>O</b>rganizer | <b>O</b>rigin }
 
 Union-Findをコアロジックにしたデータベースを自作している。
+
+正式名称は **UFO**にする予定。
+
+専用の<a href="https://github.com/kento-yoshidu/toy_ufdb_gui_app" target="_blink">GUIアプリ</a>も開発している
 
 ## バージョンについて
 
@@ -11,10 +21,8 @@ Union-Findをコアロジックにしたデータベースを自作している�
 |メジャーバージョン|内容|
 |---|---|
 |0|コア機能。オンメモリーのみ（プログラム終了でデータは消える）。HTML出力機能|
-|1|ストレージ実装（予定）|
+|1|ストレージ実装|
 |2|TCP接続対応|
-
-Todo: Tauri連携はどのフェーズでするのがいいか？
 
 永続化なし・値なし（キーのみ管理）など、v0のスコープの詳細は [`docs/ROADMAP.md`](docs/ROADMAP.md) の「既知の制約」を参照。
 
