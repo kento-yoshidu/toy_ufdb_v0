@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./docs/images/icon.png" width="90" alt="UFO icon" align="middle">
+  <img src="./docs/images/icon.png" width="250" alt="UFO icon" align="middle">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./docs/images/wordmark-dark.svg">
     <img src="./docs/images/wordmark.svg" alt="UFO - Union Find { Object | Organizer | etc... }" width="480" align="middle">

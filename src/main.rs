@@ -3,6 +3,8 @@ use std::io::{self, BufRead};
 use clap::{Parser, Subcommand};
 use toy_ufdb::db;
 
+mod snapshot;
+
 #[derive(Parser)]
 struct Cli {
     #[command(subcommand)]
@@ -21,6 +23,7 @@ enum Commands {
     Createdb { db_name: String },
     Use { db_name: String },
     Unmerge { key_a: String, key_b: String },
+    Snapshot,
     SEED,
     Exit,
 }
@@ -99,7 +102,20 @@ fn main() {
                     }
                     Commands::Unmerge { key_a, key_b } => {
                         db.current().unmerge(&key_a, &key_b);
-                    }
+                    },
+                    Commands::Snapshot => {
+                        let server = tiny_http::Server::http("127.0.0.1:0").unwrap();
+
+                        let addr = server.server_addr();
+                        let url = format!("http://{addr}");
+
+                        open::that(url).expect("Server Error");
+
+                        let request = server.recv().unwrap();
+                        let response = tiny_http::Response::from_string("<h1>hello</h1>");
+
+                        request.respond(response).unwrap();
+                    },
                     Commands::SEED => {
                         if db.current().is_empty() {
                             db.current().seed();
