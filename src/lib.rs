@@ -98,6 +98,10 @@ impl Ufdb {
         }
     }
 
+    pub fn neighbors(&self, key: &str) -> Option<&Vec<String>> {
+        self.graph.neighbors(key)
+    }
+
     pub fn seed(&mut self) {
         let unions = [
             ("apple", "banana"),
