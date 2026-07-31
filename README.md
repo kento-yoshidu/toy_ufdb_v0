@@ -20,11 +20,10 @@ Union-Findをコアロジックにしたデータベースを自作している�
 
 |メジャーバージョン|内容|
 |---|---|
-|0|コア機能。オンメモリーのみ（プログラム終了でデータは消える）。HTML出力機能|
-|1|ストレージ実装|
-|2|TCP接続対応|
+|0|コア機能。HTML出力機能。ストレージ実装。TCP接続対応。ユーザーアカウント。configファイル|
+|1|未定（v0からさらに先の大きな方針転換が必要になった場合に検討）|
 
-永続化なし・値なし（キーのみ管理）など、v0のスコープの詳細は [`docs/ROADMAP.md`](docs/ROADMAP.md) の「既知の制約」を参照。
+値なし（キーのみ管理）など、v0のスコープの詳細は [`docs/ROADMAP.md`](docs/ROADMAP.md) の「既知の制約」を参照。
 
 内部実装・計算量は [`docs/architecture.md`](docs/architecture.md)、Union-Find自体の一般論は [`docs/union-find.md`](docs/union-find.md) を参照。
 
