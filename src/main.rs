@@ -1,6 +1,7 @@
 use std::io::{self, BufRead};
 
 use clap::{Parser, Subcommand};
+use tiny_http::Response;
 use toy_ufdb::db;
 
 mod snapshot;
@@ -112,9 +113,14 @@ fn main() {
                         open::that(url).expect("Server Error");
 
                         let request = server.recv().unwrap();
-                        let response = tiny_http::Response::from_string("<h1>hello</h1>");
 
-                        request.respond(response).unwrap();
+                        let html = snapshot::render(db.current());
+                        let response = tiny_http::Response::from_string(html)
+                            .with_header(
+                                tiny_http::Header::from_bytes(&b"Content-Type"[..], &b"text/html; charset=UTF-8"[..]).unwrap()
+                            );
+
+                        request.respond(response).unwrap()
                     },
                     Commands::SEED => {
                         if db.current().is_empty() {
